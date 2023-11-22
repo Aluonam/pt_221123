@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const DeleteRepeatedWords = () => {
+
+  const [userSentence, setUserSentence] = useState()
   return (
     <>
-    <input placeholder='Write a sentence'></input>
+    {userSentence}
+    <input placeholder='Write a sentence' onChange={(e)=>{setUserSentence(e.target.value)}}></input>
+    <button onClick={()=>{}}>Delete repeated words</button>
     </>
   )
 }
