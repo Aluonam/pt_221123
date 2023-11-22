@@ -3,6 +3,7 @@ import styles from '@/styles/Home.module.css'
 import FormPassword from '@/components/FormPassword'
 import DeleteRepeatedWords from '@/components/DeleteRepeatedWords'
 import Counter from '@/components/Counter'
+import APIconsume from '@/components/APIconsume'
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
        <br></br>
        <br></br>
        <Counter></Counter>
+       <br></br>
+       <br></br>
+       <APIconsume></APIconsume>
       </main>
     </>
   )
