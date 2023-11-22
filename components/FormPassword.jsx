@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ModalANT from './ModalANT'
 
 const FormPassword = () => {
 
@@ -10,6 +11,7 @@ const FormPassword = () => {
     <input type='text' placeholder='User name' onChange={(e)=>{setUserName(e.target.value)}}></input>
     <h3>Password</h3>
     <input type='password' placeholder='User password' onChange={(e)=>{setUserPassword(e.target.value)}}></input>
+    <ModalANT></ModalANT>
     </>
   )
 }
