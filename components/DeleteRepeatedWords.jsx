@@ -4,19 +4,17 @@ const DeleteRepeatedWords = () => {
 
   const [userSentence, setUserSentence] = useState();
 
-  const handleDeleteWord = ()=>{
-    const copySentence = structuredClone(userSentence);
-    const words = copySentence.split(" ")
-    const detectedRepeated = words.filter((oneWord, index, arr)=>{
-      return arr.indexOf(oneWord) != index
-    })
-    console.log(detectedRepeated)
+  const handleDetected = ()=>{
+    const copyArr = structuredClone(userSentence.split(" "))
+    const detected = new Set(copyArr)
+    console.log(detected)
+
   }
 
   return (
     <>
     <input placeholder='Write a sentence' onChange={(e)=>{setUserSentence(e.target.value)}}></input>
-    <button onClick={()=>{handleDeleteWord()}}>Delete repeated words</button>
+    <button onClick={()=>{handleDetected()}}>Delete repeated words</button>
     </>
   )
 }
