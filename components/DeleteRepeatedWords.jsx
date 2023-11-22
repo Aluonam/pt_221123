@@ -2,12 +2,21 @@ import React, { useState } from 'react'
 
 const DeleteRepeatedWords = () => {
 
-  const [userSentence, setUserSentence] = useState()
+  const [userSentence, setUserSentence] = useState();
+
+  const handleDeleteWord = ()=>{
+    const copySentence = structuredClone(userSentence);
+    const words = copySentence.split(" ")
+    const detectedRepeated = words.filter((oneWord, index, arr)=>{
+      return arr.indexOf(oneWord) != index
+    })
+    console.log(detectedRepeated)
+  }
+
   return (
     <>
-    {userSentence}
     <input placeholder='Write a sentence' onChange={(e)=>{setUserSentence(e.target.value)}}></input>
-    <button onClick={()=>{}}>Delete repeated words</button>
+    <button onClick={()=>{handleDeleteWord()}}>Delete repeated words</button>
     </>
   )
 }
