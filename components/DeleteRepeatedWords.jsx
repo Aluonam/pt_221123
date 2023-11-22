@@ -10,8 +10,8 @@ const DeleteRepeatedWords = () => {
     const words = userSentence.split(" ");
     const detected = [...new Set(words)];
     const sentence = detected.join(' ')
+    
     setNewSentence(sentence)
-
   }
 
   return (
