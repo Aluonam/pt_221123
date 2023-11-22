@@ -6,9 +6,9 @@ const APIconsume = () => {
     const [dataAPI, setDataAPI] = useState([])
     const [dataUser, setDataUser] = useState()
 
-    const apiCall = async () => {
+    const apiCall = async (num) => {
         try{ 
-          const fetchUrl = await fetch(`https://randomuser.me/api/?results=5`)
+          const fetchUrl = await fetch(`https://randomuser.me/api/?results=${num}`)
           const data = await fetchUrl.json()
           console.log(data.results)
   
@@ -16,9 +16,9 @@ const APIconsume = () => {
       }
     
   return (
-    <div>APIconsume
-        <input onChange={()=>{}}></input>
-        <button onClick={()=>{apiCall()}}>Search</button>
+    <div>
+        <input onChange={(e)=>{setDataUser(e.target.value)}} type='number'></input>
+        <button onClick={()=>{apiCall(dataUser)}}>Search</button>
     </div>
   )
 }
